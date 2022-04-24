@@ -211,7 +211,6 @@ $("#submit-btn").click(function() {
 	$('#retake-btn').removeClass('hide');
 })
 
-
 $('#retake-btn').click(function () {
 	$('#quiz').removeClass('hide');
 	$('#submit-btn').removeClass('hide');
