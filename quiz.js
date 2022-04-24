@@ -2,24 +2,19 @@ let total = 0
 
 const majors = [
     {
+        field : "STEM",
+        majors : ["Computer Science", "Mathematics", "Natural Sciences", "Engineering"],
+        description : ""
+    },
+    {
         field : "Business",
         majors : ["Business Administration", "Marketing", "International Business", 
                 "Busniess Management", "Sales", "Accounting"],
         description : ""
     },
     {
-        field : "STEM",
-        majors : ["Computer Science", "Mathematics", "Natural Sciences", "Engineering"],
-        description : ""
-    },
-    {
-        field : "Social",
-        majors : ["Social Work", "Education", "Sociology", "Psychology"],
-        description : ""
-    },
-    {
-        field : "Art",
-        majors : ["Film", "Creative Writing", "Studio Art", "Music", "Digital Media"],
+        field : "Arts and Humanities",
+        majors : ["Social Work", "Education", "Film", "Music", "Sociology"],
         description : ""
     }
 ]
@@ -202,9 +197,7 @@ $("#submit-btn").click(function() {
 
     if(total <= -10){
         result = 2
-    } else if (total > -10 && total < 0){
-        result = 3
-    } else if (total >= 0 && total <= 10){
+    } else if (total >= 10){
         result = 0
     } else {
         result = 1
