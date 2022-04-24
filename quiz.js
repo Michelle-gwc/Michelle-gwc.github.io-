@@ -2,24 +2,19 @@ let total = 0
 
 const majors = [
     {
+        field : "STEM",
+        majors : ["Computer Science", "Mathematics", "Natural Sciences", "Engineering"],
+        description : ""
+    },
+    {
         field : "Business",
         majors : ["Business Administration", "Marketing", "International Business", 
                 "Busniess Management", "Sales", "Accounting"],
         description : ""
     },
     {
-        field : "STEM",
-        majors : ["Computer Science", "Mathematics", "Natural Sciences", "Engineering"],
-        description : ""
-    },
-    {
-        field : "Social",
-        majors : ["Social Work", "Education", "Sociology", "Psychology"],
-        description : ""
-    },
-    {
-        field : "Art",
-        majors : ["Film", "Creative Writing", "Studio Art", "Music", "Digital Media"],
+        field : "Arts and Humanities",
+        majors : ["Social Work", "Education", "Film", "Music", "Sociology"],
         description : ""
     }
 ]
@@ -147,8 +142,9 @@ function getPromptWeight(prompts, group){
     return weight
 }
 
-function getValueWeight(values, value){
-    let weight
+function getValueWeight(value){
+    let weight = 0;
+    console.log(value)
     switch(value) {
         case 'Strongly Agree':
             weight = 5
@@ -165,6 +161,7 @@ function getValueWeight(values, value){
         default:
             weight = 0
     }
+    console.log(weight)
     return weight
 }
 
@@ -178,39 +175,36 @@ $(".value-btn").mousedown(function () {
     if($(this).hasClass('active')){
         $(this).removeClass('active')
         total -= getPromptWeight(prompts, thisGroup) * 
-                getValueWeight(prompt_values, $(this).text())
+                getValueWeight($(this).text())
 
         } else {
             total -= (getPromptWeight(prompts, thisGroup) * 
-                    getValueWeight(prompt_values, $('.'+thisGroup+'.active').text()));
+                    getValueWeight( $('.'+thisGroup+'.active').text()));
 		    $('.'+thisGroup).removeClass('active');
 
             $(this).addClass('active');
             total += (getPromptWeight(prompts, thisGroup) * 
-                getValueWeight(prompt_values, $(this).text()));
+                getValueWeight($(this).text()));
         }
     console.log("Total: " + total)
 })
 
-$(".submit-btn").click(function() {
+$("#submit-btn").click(function() {
     $('.results').removeClass('hide');
 	$('.results').addClass('show');
-    let result
+    let result = 0
+    console.log(total)
 
-    switch(total){
-        case total <= -10:
-            result = 2
-        case total > -10 && total < 0:
-            result = 3
-        case total >= 0 && total <= 10:
-            result = 0
-        case total > 10:
-            result = 1
+    if(total <= -10){
+        result = 2
+    } else if (total >= 10){
+        result = 0
+    } else {
+        result = 1
     }
 
-    document.getElementById('results').innerHTML = "<h3>You are best suited to" + 
-        majors[result].field + "majors! </h3>"
-
+    document.getElementById('results').innerHTML = "<h3>You are best suited to " + 
+        majors[result].field + " majors! </h3>"
 
     $('#quiz').addClass('hide');
 	$('#submit-btn').addClass('hide');
