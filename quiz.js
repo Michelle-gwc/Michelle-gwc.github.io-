@@ -3,19 +3,20 @@ let total = 0
 const majors = [
     {
         field : "STEM",
-        majors : ["Computer Science", "Mathematics", "Natural Sciences", "Engineering"],
-        description : ""
+        majors : ["Computer Science", "Mechanical Engineering", "Biology", 
+                    "Electrical Engineering", "Chemistry"],
+        image : "images/stem.jpg"
     },
     {
         field : "Business",
-        majors : ["Business Administration", "Marketing", "International Business", 
-                "Busniess Management", "Sales", "Accounting"],
-        description : ""
+        majors : ["Business Administration", "Marketing", "Accounting", 
+                "Finance", "Sales"],
+        image : "images/business.jpg"
     },
     {
         field : "Arts and Humanities",
         majors : ["Social Work", "Education", "Film", "Music", "Sociology"],
-        description : ""
+        image : "images/humanities.jpg"
     }
 ]
 
@@ -94,16 +95,14 @@ function createPromptItems(){
     
     for(let i = 0; i < prompts.length; i++){
         let li = document.createElement('li')
-        let h3 = document.createElement('h3')
+        let h4 = document.createElement('h4')
         let prompt_text = document.createTextNode(prompts[i].prompt);
 
         li.setAttribute("class", "list-group-item prompt")
-        h3.appendChild(prompt_text)
-        li.appendChild(h3)
+        h4.appendChild(prompt_text)
+        li.appendChild(h4)
 
         document.getElementById('quiz').appendChild(li)
-
-        console.log(prompt_text)
 
     }
 }
@@ -204,18 +203,29 @@ $("#submit-btn").click(function() {
     }
 
     document.getElementById('results').innerHTML = "<h3>You are best suited to " + 
-        majors[result].field + " majors! </h3>"
+        majors[result].field + " majors! </h3><br/>" + 
+        "<img src=" + majors[result].image + " alt='Major image' width='500' height='300'/><br/>" +
+        "<h4>Most popular majors: </h4> <br/>" +
+        "<ul>" +
+            "<li><a href='degreeTrees.html'>" + majors[result].majors[0] + "</li>" +
+            "<li><a href='degreeTrees.html'>" + majors[result].majors[1] + "</li>" +
+            "<li><a href='degreeTrees.html'>" + majors[result].majors[2] + "</li>" +
+            "<li><a href='degreeTrees.html'>" + majors[result].majors[3] + "</li>" +
+            "<li><a href='degreeTrees.html'>" + majors[result].majors[4] + "</li>" +
+        "</ul>"
 
-    $('#quiz').addClass('hide');
-	$('#submit-btn').addClass('hide');
-	$('#retake-btn').removeClass('hide');
+    $('#title').addClass('hide')
+    $('#quiz').addClass('hide')
+	$('#submit-btn').addClass('hide')
+	$('#retake-btn').removeClass('hide')
 })
 
 $('#retake-btn').click(function () {
-	$('#quiz').removeClass('hide');
-	$('#submit-btn').removeClass('hide');
-	$('#retake-btn').addClass('hide');
+	$('#quiz').removeClass('hide')
+	$('#submit-btn').removeClass('hide')
+    $('#title').removeClass('hide')
+	$('#retake-btn').addClass('hide')
 
-	$('.results').addClass('hide');
-	$('.results').removeClass('show');
+	$('.results').addClass('hide')
+	$('.results').removeClass('show')
 })
