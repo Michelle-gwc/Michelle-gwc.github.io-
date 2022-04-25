@@ -13,7 +13,7 @@
 
     <style>
         body{
-            background-color: #ffffff
+            background-color: #000000
         }
 
         .select{
@@ -25,13 +25,15 @@
             margin-bottom: auto;
             margin-left: auto;
             margin-right: auto;
-            /*1275px is the max width on my screen*/
-            border: 10px solid #26000e;
+            /* border: 10px solid #26000e; */
+            border: 10px solid #002640;
             border-radius: 5px;
-            /*outline: 10px solid #3E0E8C;*/
-            border-left: 3px solid #ffbfd8;
-            border-top: 3px solid #ffbfd8;
-            background-color: #83113d;
+            /* border-left: 3px solid #ffbfd8;
+            border-top: 3px solid #ffbfd8; */
+            border-left: 3px solid #00fecb;
+            border-top: 3px solid #00fecb;
+            /*background-color: #83113d;*/
+            background-color: #00adb3;
             box-sizing: border-box;
         }
 
@@ -75,17 +77,17 @@
             <ul class = "main">
                 <li id = "Majors"><span class = "caret">Majors</span>
                     <ul class = "nested">
-                        <li id = ""><span class = "caret">Major 1</span>
+                        <li id = "CS"><span class = "caret">Computer Science</span>
                             <ul class = "nested">
                                 <li id = "Prereq"><span class = "caret">Prerequisites</span>
                                     <ul class = "nested">
-                                        <li id = "Class" onclick = pop_up(id)></li>
+                                        <li id = "Class"><button type = "button" onclick = "pop_up('CISC 3115',1000, 800, 'yes')">Class 1</button></li>
                                     </ul>
                                 </li>
 
                                 <li id = "Electives"><span class = "caret">Electives</span>
                                     <ul class = "nested">
-                                        <li id = "Class" onclick = pop_up(id)></li>
+                                        <li id = "Class" onclick = "pop_up(id)">Class 2</li>
                                     </ul>
                                 </li>
                             </ul>
@@ -94,13 +96,13 @@
                             <ul class = "nested">
                                 <li id = "Prereq"><span class = "caret">Prerequisites</span>
                                     <ul class = "nested">
-                                        <li id = "Class" onclick = pop_up(id)></li>
+                                        <li id = "Class" onclick = "pop_up(id)">Class 3</li>
                                     </ul>
                                 </li>
                                 
                                 <li id = "Electives"><span class = "caret">Electives</span>
                                     <ul class = "nested">
-                                        <li id = "Class" onclick = pop_up(id)></li>
+                                        <li id = "Class" onclick = "pop_up(id)">Class 4</li>
                                     </ul>
                                 </li>
                             </ul>
@@ -109,28 +111,28 @@
                             <ul class = "nested">
                                 <li id = "Prereq"><span class = "caret">Prerequisites</span>
                                     <ul class = "nested">
-                                        <li id = "Class" onclick = pop_up(id)></li>
+                                        <li id = "Class" onclick = "pop_up(id)">Class 5</li>
                                     </ul>
                                 </li>
                                 
                                 <li id = "Electives"><span class = "caret">Electives</span>
                                     <ul class = "nested">
-                                        <li id = "Class" onclick = pop_up(id)></li>
+                                        <li id = "Class" onclick = "pop_up(id)">Class 6</li>
                                     </ul>
                                 </li>
                             </ul>
                         </li>           
-                        <li id = "" onclick = delete_item(id)><span class = "caret">Major 4</span>
+                        <li id = "N" onclick = delete_item(id)><span class = "caret">Nutrition</span>
                             <ul class = "nested">
                                 <li id = "Prereq"><span class = "caret">Prerequisites</span>
                                     <ul class = "nested">
-                                        <li id = "Class" onclick = pop_up(id)></li>
+                                        <li id = "Class" onclick = "pop_up(id)">Class 7</li>
                                     </ul>
                                 </li>
                                 
                                 <li id = "Electives"><span class = "caret">Electives</span>
                                     <ul class = "nested">
-                                        <li id = "Class" onclick = pop_up(id)></li>
+                                        <li id = "Class" onclick = "pop_up(id)">Class 8</li>
                                     </ul>
                                 </li>
                             </ul>
@@ -140,16 +142,8 @@
             </ul>
         </div>
 
-        <script>
-            var toggler = document.getElementsByClassName("caret");
-            var i;
-    
-            for (i = 0; i < toggler.length; i++) {
-                toggler[i].addEventListener("click", function() {
-                this.parentElement.querySelector(".nested").classList.toggle("active");
-                this.classList.toggle("caret-down");
-                });
-            }
+        <script type = "text/javascript" src = "tree_script.js">
+           
         </script>
     
     </body>
