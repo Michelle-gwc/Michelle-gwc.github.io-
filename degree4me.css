@@ -87,6 +87,7 @@ body {
     width: fit-content;
     color: #fff;
     margin: 0 auto;
+	margin-bottom: 50px;
 }
 
 .container {
@@ -188,4 +189,21 @@ ul {
     color: #fff;
     width: fit-content;
     margin: 0 auto;
+}
+
+.grid-container {
+	color:white;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+}
+
+button {
+	color: white;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    border: none;
+    cursor: pointer;
+    overflow: hidden;
+    outline: none;
 }
