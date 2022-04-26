@@ -142,13 +142,36 @@ ul {
 /* DEGREE PATH CSS */
 .select{
     color: #ffffff;
-    max-width: 375px;
-    height: auto;
+    width: 425px;
+    height: 425px;
     padding: 5px;
-    margin-top: auto;
-    margin-bottom: auto;
-    margin-left: auto;
-    margin-right: auto;
+    margin: auto;
+    margin-right: 50px;
+    border: solid #00fecb 2px;
+    box-sizing: border-box;
+}
+
+button {
+	color: white;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    border: none;
+    cursor: pointer;
+    overflow: hidden;
+    outline: none;
+}
+
+button:hover {
+    transform: scale(1.1);
+    color: #00fecb;
+}
+#course-desc{
+    color: #ffffff;
+    width: 425px;
+    height: 425px;
+    padding: 10px;
+    margin: auto;
+    margin-left: 50px;
     border: solid #00fecb 2px;
     box-sizing: border-box;
 }
@@ -198,12 +221,4 @@ ul {
     grid-gap: 20px;
 }
 
-button {
-	color: white;
-    background-color: transparent;
-    background-repeat: no-repeat;
-    border: none;
-    cursor: pointer;
-    overflow: hidden;
-    outline: none;
-}
+
