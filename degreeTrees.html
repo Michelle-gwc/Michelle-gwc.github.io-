@@ -33,31 +33,28 @@
 			<div class="degree-path">
             <div class = "select">
                 <ul class = "open">
-                    <li id = ""><span class = "caret">Computer Science</span>
-                        <ul class = "open">
-                            <li id = "Prereq"><span class = "caret">Prerequisites</span>
-                                <ul id="prereqs" class = "open">
-									<li class="course"><button onclick="displayCourse(0)">Intro to Programming</button><li>
-									<li class="course"><button onclick="displayCourse(1)">Object-Oriented Programming</button><li>
-									<li class="course"><button onclick="displayCourse(2)">Data Structures</button><li>
-									<li class="course"><button onclick="displayCourse(3)">Discrete Mathematics</button><li>
-									<li class="course"><button onclick="displayCourse(4)">Analysis of Algorithms</button><li>
-									<li class="course"><button onclick="displayCourse(5)">Computer Architecture</button><li>
-									<li class="course"><button onclick="displayCourse(6)">Operating Systems</button><li>
-                                </ul>
-                            </li>
-                            <li id = "Electives"><span class = "caret">Electives</span>
-                                <ul class = "open">
-                                    <li class="course"><button onclick="displayCourse(7)">Artificial Intelligence</button></li>
-                                    <li class="course"><button onclick="displayCourse(8)">Computer Graphics</button></li>
-                                    <li class="course"><button onclick="displayCourse(9)">Game Programming</button></li>
-                                    <li class="course"><button onclick="displayCourse(10)">Theoretical Computer Science</button></li>
-                                    <li class="course"><button onclick="displayCourse(11)">Database Systems</button></li>
-                                </ul>
-                            </li>
+                    <li id = "Prereq"><span class = "caret">Prerequisites</span>
+                        <ul id="prereqs" class = "open">
+                            <li><div class="course clicked" onclick="displayCourse(0)">Intro to Programming</div><li>
+                            <li><div class="course" onclick="displayCourse(1)">Object-Oriented Programming</div><li>
+                            <li><div class="course" onclick="displayCourse(2)">Data Structures</div><li>
+                            <li><div class="course" onclick="displayCourse(3)">Discrete Mathematics</div><li>
+                            <li><div class="course" onclick="displayCourse(4)">Analysis of Algorithms</div><li>
+                            <li><div class="course" onclick="displayCourse(5)">Computer Architecture</div><li>
+                            <li><div class="course" onclick="displayCourse(6)">Operating Systems</div><li>
                         </ul>
                     </li>
-                </ul> 
+                    <li id = "Electives"><span class = "caret">Electives</span>
+                        <ul class = "open">
+                            <li><div class="course" onclick="displayCourse(7)">Artificial Intelligence</div></li>
+                            <li><div class="course" onclick="displayCourse(8)">Computer Graphics</div></li>
+                            <li><div class="course" onclick="displayCourse(9)">Game Programming</div></li>
+                            <li><div class="course" onclick="displayCourse(10)">Theoretical Computer Science</div></li>
+                            <li><div class="course" onclick="displayCourse(11)">Database Systems</div></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
             </div>
             
         </div>
@@ -75,6 +72,7 @@
 			</p>
         </div>
 		</div>
+        <script type="text/javascript" src="https://code.jquery.com/jquery-1.7.1.min.js"></script>
         <script type="text/javascript" src="degreeTrees.js"></script>
     </body>
     

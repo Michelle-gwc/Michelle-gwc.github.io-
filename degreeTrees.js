@@ -137,3 +137,19 @@ function displayCourse(i){
 			</p><p>Prerequisites: ' + classes[i].prereqs + '</p>';
 
 }
+
+
+let courseNames = document.querySelectorAll('.course')
+
+for(let i = 0; i < courseNames.length; i++){
+    let button1 = courseNames[i]
+
+    button1.addEventListener('click', function(event){
+        for(let j = 0; j < courseNames.length; j++){
+            console.log(j)
+            let button2 = courseNames[j]
+            button2.classList.remove('clicked')
+        }
+        this.classList.toggle('clicked')
+    })
+}
