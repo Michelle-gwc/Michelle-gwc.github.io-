@@ -8,10 +8,13 @@
     <link href="degree4me.css" rel="stylesheet" type="text/css"/>
       
 </head>
+
 <body>
     <div class="navbar">
         <div class="logo">
-            <img src="degree1.png" alt="Degree 4 Me">
+            <a href = "index.html">
+                <img src="degree1.png" alt="Degree 4 Me">
+            </a>
         </div>
         <ul class="nav-area">
             <li><a href="index.html">Home</a></li>
@@ -19,18 +22,33 @@
             <li><a href="contact.html">Contact us</a></li>
         </ul>
     </div>
+
     <div class="container welcome-text">
         <h1>Degree <span class="highlight">4 Me</span></h1>
-        <div class="search">
-            <input type="search" placeholder="Search degrees...">
-            <a href="degreeTrees.html"><button class="btn">Search</button></a>
+        
+        <form autocomplete="off" action="degreeTrees.html">
+            <div class="autocomplete search">
+              <input id="myInput" type="text" name="myMajor" placeholder="Search degrees...">
+              <a href="degreeTrees.html"><button class="btn">Search</button></a>
+            </div>
+        </form>
+
+        </br></br></br>
+
+        <div class = "title">
+            <h4>Select a degree to find out more:<h4>
+            <a href="degreeTrees.html"><button class="btn">Computer Science</button></a>
+            <a href="degreeTreeBusiness.html"><button class="btn">Business</button></a>
+            <a href="degreeTreeJournalism.html"><button class="btn">Journalism</button></a>
         </div>
-		
-		<div class="title">
-			<h3>Dont know? Try taking our quiz!</h3>
-			<a href="quiz.html"><button class="btn">Take Quiz</button></a>
-		</div>
+
+        <div class="title">
+            <h3>Dont know? Try taking our quiz!</h3>
+            <a href="quiz.html"><button class="btn">Take Quiz</button></a>
+        </div>
+        
     </div>
 
 </body>
+<script src="index.js"></script>
 </html>
