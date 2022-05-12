@@ -37,6 +37,7 @@ function autocomplete(inp, arr) {
                 /*close the list of autocompleted values,
                 (or any other open lists of autocompleted values:*/
                 closeAllLists();
+                search(inp.value);
             });
             a.appendChild(b);
           }
@@ -93,8 +94,23 @@ function autocomplete(inp, arr) {
         }
       }
     }
+    function search(value) {
+        //var elem = document.getElementById("myInput");
+        var form = document.getElementById("form");
+
+        if(value == "Business") {
+            form.action = "degreeTreeBusiness.html";
+        }
+        else if(value == "Computer Science") {
+            form.action = "degreeTrees.html";
+        }
+        else if(value == "Journalism") { 
+            form.action = "degreeTreeJournalism.html";
+        }
+    
+    }
     /*execute a function when someone clicks in the document:*/
     document.addEventListener("click", function (e) {
         closeAllLists(e.target);
     });
-  }
+}
