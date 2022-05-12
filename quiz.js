@@ -133,6 +133,7 @@ function createValueButtons(){
 
             button.className = 'group' + i + ' value-btn btn ' + prompt_values[j].class
 
+            //sets defaults response to neutral
             if(prompt_values[j].value === 'Neutral'){
                 button.className += ' active'
             }
