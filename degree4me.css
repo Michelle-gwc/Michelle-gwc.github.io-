@@ -128,6 +128,10 @@ body {
     display: flex;
 }
 
+.error {
+    color:#00fecb;
+}
+
 .active {
     background-color: #00fecb;
 }

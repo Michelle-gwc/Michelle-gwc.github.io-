@@ -187,7 +187,6 @@ createValueButtons()
 $(".value-btn").mousedown(function () {
     let classList = $(this).attr('class').split(" ")
     let thisGroup = classList[0]
-
     if($(this).hasClass('active')){
         $(this).removeClass('active')
         total -= getPromptWeight(prompts, thisGroup) * 
@@ -206,10 +205,29 @@ $(".value-btn").mousedown(function () {
 })
 
 $("#submit-btn").click(function() {
+    let active
+    for(let i = 0; i < 8; i++){
+        active = false
+        let group = Array.from(document.getElementsByClassName('group' + i))
+        for(let j = 0; j < group.length; j++){
+            
+            if(group[j].classList.contains('active')){
+                active = true
+            }
+
+        }
+        if(active == false){
+            $('.error').removeClass('hide')
+            $('.error').addClass('show')
+            return
+        }
+    }
+
     $('.results').removeClass('hide');
 	$('.results').addClass('show');
+    $('.error').removeClass('show');
+    $('.error').addClass('hide');
     let result = 0
-    console.log(total)
 
     if(total <= -6){
         result = 2
