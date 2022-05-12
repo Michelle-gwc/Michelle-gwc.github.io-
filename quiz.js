@@ -2,21 +2,33 @@ let total = 0
 
 const majors = [
     {
-        field : "STEM",
-        majors : ["Computer Science", "Mechanical Engineering", "Biology", 
-                    "Electrical Engineering", "Chemistry"],
-        image : "images/stem.jpg"
+        field : "Computer Science",
+        desc : `Computer science is a major for problem solvers who want to learn how 
+        to use computers and computational processes to build websites, program robots, 
+        mine data and more.`,
+        image : "images/stem.jpg",
+        htmlFile : "degreeTrees.html"
     },
     {
         field : "Business",
-        majors : ["Business Administration", "Marketing", "Accounting", 
-                "Finance", "Sales"],
-        image : "images/business.jpg"
+        desc : `Business administration majors learn the mechanics of business 
+        through classes in fundamentals such as finance, accounting and 
+        marketing and delve into more specialized topics. Students find ways 
+        to solve problems using data, and they develop communication and managerial skills`,
+        image : "images/business.jpg",
+        htmlFile : "degreeTreeBusiness.html"
     },
     {
-        field : "Arts and Humanities",
-        majors : ["Social Work", "Education", "Film", "Music", "Sociology"],
-        image : "images/humanities.jpg"
+        field : "Journalism and Media Studies",
+        desc : `The Journalism and Media Studies program encourages students 
+        to develop a critical, ethical, and deliberative paradigm for the 
+        practice of journalism as a public service. We seek to cultivate 
+        proficiencies in storytelling across platforms and subject areas, 
+        and inspire our students to embrace the potential for innovation 
+        that exists in our media environment. `,
+        image : "images/humanities.jpg",
+        htmlFile : "degreeTreeJournalism.html"
+        
     }
 ]
 
@@ -194,25 +206,20 @@ $("#submit-btn").click(function() {
     let result = 0
     console.log(total)
 
-    if(total <= -10){
+    if(total <= -6){
         result = 2
-    } else if (total >= 10){
+    } else if (total >= 6){
         result = 0
     } else {
         result = 1
     }
 
     document.getElementById('results').innerHTML = "<h3>You are best suited to " + 
-        majors[result].field + " majors! </h3><br/>" + 
+        majors[result].field + "! </h3><br/>" + 
         "<img src=" + majors[result].image + " alt='Major image' width='500' height='300'/><br/>" +
-        "<h4>Most popular majors: </h4> <br/>" +
-        "<ul>" +
-            "<li><a href='degreeTrees.html'>" + majors[result].majors[0] + "</li>" +
-            "<li><a href='degreeTrees.html'>" + majors[result].majors[1] + "</li>" +
-            "<li><a href='degreeTrees.html'>" + majors[result].majors[2] + "</li>" +
-            "<li><a href='degreeTrees.html'>" + majors[result].majors[3] + "</li>" +
-            "<li><a href='degreeTrees.html'>" + majors[result].majors[4] + "</li>" +
-        "</ul>"
+        "<div class='course-desc'>" +
+        "<p>" + majors[result].desc + "</p>" +
+        "<a href='" + majors[result].htmlFile + "'>VIEW DEGREE</a>"
 
     $('#title').addClass('hide')
     $('#quiz').addClass('hide')

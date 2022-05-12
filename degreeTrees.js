@@ -135,10 +135,9 @@ function displayCourse(i){
 			<p>' + classes[i].credits + '</p><br>\
 			<p>' + classes[i].desc + '\
 			</p><p>Prerequisites: ' + classes[i].prereqs + '</p>';
-
 }
 
-
+//Add toggle function to course names
 let courseNames = document.querySelectorAll('.course')
 
 for(let i = 0; i < courseNames.length; i++){
